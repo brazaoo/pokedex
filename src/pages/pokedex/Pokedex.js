@@ -6,14 +6,17 @@ import Logo from "../../img/pokelogo.png";
 import ButtonBack from "../../img/voltar.png";
 import { BASE_URL } from "../../constants/Constants";
 import useRequestData from "../../hooks/useRequestData";
+import Header from "../../components/header";
 
 function Pokedex({ poke, item }) {
   const navigate = useNavigate();
-  
-  const pokedex = item &&
-  item.sort((a, b) => {
-      return a.id - b.id
-    })
+
+  const pokedex =
+    item &&
+    item
+      .sort((a, b) => {
+        return a.id - b.id;
+      })
       .map((item) => {
         return (
           <div
@@ -24,30 +27,13 @@ function Pokedex({ poke, item }) {
             pokedex={pokedex}
           />
         );
-      });  
+      });
 
   return (
     <div>
-      <Container>
-        <Headers>
-          <LogoImage
-            src={Logo}
-            title="Home"
-            onClick={() => {
-              goToHomePage(navigate);
-            }}
-          ></LogoImage>
-          <BackImage
-            src={ButtonBack}
-            title="Voltar"
-            onClick={() => {
-              goToBack(navigate);
-            }}
-          ></BackImage>
-        </Headers>
-        {pokedex}
-      </Container>
-          </div>
+      <Header isHome={false}></Header>
+      <Container>{pokedex}</Container>
+    </div>
   );
 }
 

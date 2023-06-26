@@ -20,6 +20,7 @@ import { useState } from "react";
 import axios from "axios";
 import Logo from "../../img/pokelogo.png";
 import Pokebola from "../../img/pokebola.png";
+import Header from "../../components/header";
 
 function HomePage(item) {
   const navigate = useNavigate();
@@ -66,33 +67,11 @@ function HomePage(item) {
         </CardContainer>
       );
     });
-    
 
   return (
     <div>
-      <Container>
-        <Headers>
-          <div>
-            <LogoImage
-              src={Logo}
-              title="Home"
-              onClick={() => {
-                goToHomePage(navigate);
-              }}
-            ></LogoImage>
-          </div>
-          <div>
-            <PokeButton
-              onClick={() => {
-                goToPokedex(navigate);
-              }}
-            >
-              <ImgPokeball src={Pokebola} title="Pokedex" />
-            </PokeButton>
-          </div>
-        </Headers>
-        {pokemon}
-      </Container>
+      <Header></Header>
+      <Container className="container">{pokemon}</Container>
     </div>
   );
 }

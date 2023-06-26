@@ -3,14 +3,19 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { Container, Headers, LogoImage, BackImage } from "../homePage/Style";
 import {
+  CardPowers,
+  ImgContainer,
   ImgDetails,
+  PowerContainer,
   PowerDetails,
   SuperPowerDetails,
   SuperPowerDetailsMini,
+  TypeContainer,
 } from "./Style";
 import { goToBack, goToHomePage } from "../../routes/Coordinator";
 import Logo from "../../img/pokelogo.png";
 import ButtonBack from "../../img/voltar.png";
+import Header from "../../components/header";
 
 const DetailsPage = () => {
   const navigate = useNavigate();
@@ -47,28 +52,9 @@ const DetailsPage = () => {
 
   return (
     <div>
+      <Header isHome={false}></Header>
       <Container>
-        <Headers>
-          <div>
-            <LogoImage
-              src={Logo}
-              title="Home"
-              onClick={() => {
-                goToHomePage(navigate);
-              }}
-            ></LogoImage>
-          </div>
-          <div>
-            <BackImage
-              src={ButtonBack}
-              title="Voltar"
-              onClick={() => {
-                goToBack(navigate);
-              }}
-            ></BackImage>
-          </div>
-        </Headers>
-        <div>
+        <ImgContainer>
           <ImgDetails>
             <img
               src={
@@ -87,9 +73,9 @@ const DetailsPage = () => {
               }
             />
           </ImgDetails>
-        </div>
+        </ImgContainer>
 
-        <div>
+        <PowerContainer>
           <PowerDetails>
             {" "}
             <div>
@@ -98,18 +84,21 @@ const DetailsPage = () => {
                 selectPoke.stats.map((stat) => {
                   return (
                     <div key={stat.stat.name}>
-                      <strong> {stat.stat.name}: </strong>{" "}
-                      <p>{stat.base_stat}</p>
+                      <p>
+                        <strong> {stat.stat.name.toUpperCase()}: </strong> {stat.base_stat}
+                      </p>
                     </div>
                   );
                 })}
             </div>
           </PowerDetails>
-        </div>
-        <div>
+        </PowerContainer>
+
+        <TypeContainer>
           <SuperPowerDetailsMini>
             <div>
               {" "}
+              <h2>Type</h2>
               {selectPoke.types &&
                 selectPoke.types.map((type) => {
                   return (
@@ -123,6 +112,7 @@ const DetailsPage = () => {
           <SuperPowerDetails>
             <div>
               {" "}
+              <h2>Skills</h2>
               {selectPoke.moves &&
                 selectPoke.moves.map((move, index) => {
                   if (index <= 3 && selectPoke.moves.length) {
@@ -135,7 +125,7 @@ const DetailsPage = () => {
                 })}
             </div>
           </SuperPowerDetails>
-        </div>
+        </TypeContainer>
       </Container>
     </div>
   );

@@ -1,23 +1,9 @@
 import styled from "styled-components";
 
-export const Headers = styled.div`
-  font-family: Dax;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-image: linear-gradient(#254949, #7eceb3, #407072);
-  color: whitesmoke;
-  width: 100vw;
-  height: 20vh;
-  padding-left: 30px;
-  padding-right: 30px;
-`;
 export const CardContainer = styled.div`
-  width: 18vw;
-  height: 45vh;
+  width: 100%;
   color: black;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
   border-radius: 10px;
   border: 1px solid lightgrey;
@@ -27,6 +13,9 @@ export const CardContainer = styled.div`
     background-color: whitesmoke;
     transition: 0.3s;
   }
+  @media (min-width: 768px) {
+		width: 30%;
+	}
 `;
 export const Container = styled.div`
   display: flex;
@@ -35,49 +24,14 @@ export const Container = styled.div`
 `;
 
 export const PokemonPhoto = styled.img`
-  width: 12vw;
-`;
-export const ImgPokeball = styled.img`
-  width: 5vw;
-`;
-export const PokeButton = styled.button`
-  border: none;
-  border-radius: 100%;
-  margin-right: 35px;
-  :hover {
-    transform: rotate(1turn);
-    transition: 0.8s;
-    cursor: pointer;
-  }
+  width: 200px;
 `;
 export const PokemonName = styled.h2`
   color: orange;
   text-shadow: 1px 1px 1px darkslategrey;
-  font-size: 2vw;
+  font-size: 1.8rem;
   margin: 10px;
 `;
-
-export const LogoImage = styled.img`
-  width: 22vw;
-  margin: 30px;
-  margin-bottom: 10px;
-  :hover {
-    transform: translate(0px, -0.5%);
-    cursor: pointer;
-    opacity: 0.9;
-  }
-`;
-export const BackImage = styled.img`
-  width: 8vw;
-  margin: 30px;
-  margin-bottom: 10px;
-  :hover {
-    transform: translate(0px, -1%);
-    cursor: pointer;
-    opacity: 0.9;
-  }
-`;
-
 export const CardButtons = styled.button`
   color: whitesmoke;
   border: none;

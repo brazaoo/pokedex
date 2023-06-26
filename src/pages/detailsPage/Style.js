@@ -1,54 +1,53 @@
 import styled from "styled-components";
 
-export const ImgDetails = styled.section`
-display: flex;
-width: 14vw;
-height: 25vh;
-color: black;
-margin: 20px;
-padding: 10px;
-border-radius: 10px;
-border: 2px solid whitesmoke;
-box-shadow: 5px 5px 5px lightgray;
+export const ImgContainer = styled.section`
+  display: flex;
+  width: 100%;
+`;
 
-img {
-    width: 8rem
-}
+export const ImgDetails = styled.div`
+  display: block;
+  width: 50%;
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  box-shadow: 5px 5px 5px lightgray;
 
-`
+  img {
+    width: 100%;
+  }
+`;
 
-export const PowerDetails = styled.section`
-width: 24vw;
-height: 59vh;
-color: black;
-margin: 20px;
-padding: 10px;
-border-radius: 10px;
-border: 2px solid whitesmoke;
-box-shadow: 5px 5px 5px lightgray;
+export const PowerContainer = styled.section`
+  display: flex;
+  width: 100%;
+`;
+export const PowerDetails = styled.div`
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  box-shadow: 5px 5px 5px lightgray;
+`;
+export const TypeContainer = styled.section`
+  display: flex;
+  width: 100%;
+`;
+export const SuperPowerDetailsMini = styled.div`
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  box-shadow: 5px 5px 5px lightgray;
+`;
 
-`
-export const SuperPowerDetailsMini = styled.section`
-width: 24vw;
-height: 9vh;
-color: black;
-margin: 20px;
-padding: 10px;
-border-radius: 10px;
-border: 2px solid whitesmoke;
-box-shadow: 5px 5px 5px lightgray;
-
-`
-
-
-export const SuperPowerDetails = styled.section`
-width: 24vw;
-height: 43vh;
-color: black;
-margin: 20px;
-padding: 10px;
-border-radius: 10px;
-border: 2px solid whitesmoke;
-box-shadow: 5px 5px 5px lightgray;
-
-`
+export const SuperPowerDetails = styled.div`
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid whitesmoke;
+  box-shadow: 5px 5px 5px lightgray;
+`;
